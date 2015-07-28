@@ -1,0 +1,1 @@
+var prox = angular.module('prox', []);
