@@ -16,6 +16,8 @@ body {
   background-color: black;
   border-radius: 1em;
   padding: 1em;
+  z-index: 1000;
+  position: absolute;
 }
 
 @keyframes fadein {
@@ -69,6 +71,9 @@ input {
 }
 
 form {
+  z-index: 1000;
+  margin-top: 6em;
+  position: absolute;
   border-radius: 5px;
   width: 20%;
   color: white;
@@ -101,7 +106,7 @@ form {
 }
 
 .link {
-  margin-bottom: .3em;
+  margin-top: .3em;
   border: 2px solid black;
   border-radius: 5px;
   color: white;
@@ -125,4 +130,23 @@ img:hover {
   -webkit-box-shadow: 0px 0px 8px 0px black;
   -moz-box-shadow: 0px 0px 8px 0px black;
   box-shadow: 0px 0px 15px 0px black;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+.unlogged {
+  margin-top: 10em;
+  width: 30%;
+  margin: auto;
+  background-color: black;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+  -moz-box-shadow: 0px 0px 8px 0px black;
+  box-shadow: 0px 0px 15px 0px black;
+  z-index: 20000;
+  word-wrap: break-word;
+  color: white;
+  text-align: center;
 }

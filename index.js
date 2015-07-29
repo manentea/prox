@@ -53,6 +53,14 @@
         remember: "sessionOnly"
       });
     };
+
+    $scope.requireLogged = function(){
+      if(myBase.getAuth()){
+        return true
+      } else {
+        return false
+      }
+    };
   });
 
 
