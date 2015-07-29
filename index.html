@@ -5,27 +5,28 @@
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
   <script src='index.js'></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
   <title></title>
 </head>
 <body>
-  <div>
-    <textarea ng-model='text.hello'>
-    </textarea>
-    <div>
-      {{ text.hello }}
-    </div>
-    <div ng-controller='LoginController'>
-      <a href='#' ng-click='tab = 2'>Login </a> <a href='#' ng-click='tab = 1'> Signup</a>
-      <form ng-submit='login()' ng-show='tab == 2'>
-        <div><input type='text' name='user[name]' placeholder='Username' ng-model='userName'/></div>
-        <div><input type='password' name='user[pass]' placeholder='Password' ng-model='passWord'/></div>
+  <div class='container'>
+
+    <div class='forms' ng-controller='LoginController'>
+
+      <div class='links'><a href='#' ng-click='tab = 2'>Login </a> <a href='#' ng-click='tab = 1'> Signup</a></div>
+
+      <form name='personForm1' ng-submit='login()' ng-show='tab == 2'>
+        <div><input type='text' name='name' placeholder='Username' ng-model='user.userName'/></div>
+        <div><input type='password' name='pass' placeholder='Password' ng-model='user.passWord'/></div>
         <input type='submit' value='Submit'/>
       </form>
-      <form ng-submit='create()' ng-show='tab == 1'>
-        <div><input type='text' name='user[name]' placeholder='Username' ng-model='userName'/></div>
-        <div><input type='password' name='user[pass]' placeholder='Password' ng-model='passWord'/></div>
+
+      <form name='personForm2' ng-submit='create()' ng-show='tab == 1'>
+        <div><input type='text' name='name' placeholder='Username' ng-model='user.userName'/></div>
+        <div><input type='password' name='pass' placeholder='Password' ng-model='user.passWord'/></div>
         <input type='submit' value='Submit'/>
       </form>
+
     </div>
   </div>
 </body>
