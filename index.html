@@ -13,18 +13,35 @@
 
     <div class='forms' ng-controller='LoginController'>
 
-      <div class='links'><a href='#' ng-click='tab = 2'>Login </a> <a href='#' ng-click='tab = 1'> Signup</a></div>
+      <div class='links'>
+        <a href='#' ng-click='tab = 1'>Login</a>
+        <a href='#' ng-click='tab = 2'>Signup</a>
+      </div>
 
-      <form name='personForm1' ng-submit='login()' ng-show='tab == 2'>
-        <div><input type='text' name='name' placeholder='Username' ng-model='user.userName'/></div>
-        <div><input type='password' name='pass' placeholder='Password' ng-model='user.passWord'/></div>
-        <input type='submit' value='Submit'/>
+      <form name='personForm1' ng-submit='login()' ng-show='tab == 1'>
+        Enter Your Login Info!!!
+        <div>
+          <label>Username:</label>
+          <input type='text' name='name1' placeholder='Username' ng-model='user.userName1'/>
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type='password' name='pass1' placeholder='Password' ng-model='user.passWord1'/>
+          <input type='submit' value='Submit'/>
+        </div>
       </form>
 
-      <form name='personForm2' ng-submit='create()' ng-show='tab == 1'>
-        <div><input type='text' name='name' placeholder='Username' ng-model='user.userName'/></div>
-        <div><input type='password' name='pass' placeholder='Password' ng-model='user.passWord'/></div>
-        <input type='submit' value='Submit'/>
+      <form name='personForm2' ng-submit='create()' ng-show='tab == 2'>
+        Enter An Email and Password to Signup!!!
+        <div>
+          <label>Username:</label>
+          <input type='text' name='name2' placeholder='Username' ng-model='user.userName2'/>
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type='password' name='pass2' placeholder='Password' ng-model='user.passWord2'/>
+          <input type='submit' value='Submit'/>
+        </div>
       </form>
 
     </div>
