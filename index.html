@@ -9,39 +9,50 @@
   <title></title>
 </head>
 <body>
-  <div class='container'>
+  <div class='container' ng-init='menu = 0'>
 
-    <div class='forms' ng-controller='LoginController'>
-
-      <div class='links'>
-        <a href='#' ng-click='tab = 1'>Login</a>
-        <a href='#' ng-click='tab = 2'>Signup</a>
+    <div class='forms' ng-controller='LoginController' ng-init='tab = 0'>
+      <div class="icon" ng-click='menu = 1' ng-show='menu == 0'>
+        <img src="menu-alt-512.png">
+      </div>
+      <div class="icon" ng-click='menu = 0' ng-show='menu == 1'>
+        <img src="menu-alt-512.png">
+      </div>
+      <div class="links" ng-show='menu == 1'>
+        <div class='link' ng-click='tab = 1' ng-hide='tab == 1'>
+          <a href='#'>Login</a>
+        </div>
+        <div class='link' ng-click='tab = 0' ng-show='tab == 1'>
+          <a href='#'>Login</a>
+        </div>
+        <div class='link' ng-click='tab = 2' ng-hide='tab == 2'>
+          <a href='#'>Signup</a>
+        </div>
+        <div class='link' ng-click='tab = 0' ng-show='tab == 2'>
+          <a href='#'>Signup</a>
+        </div>
       </div>
 
       <form name='personForm1' ng-submit='login()' ng-show='tab == 1'>
         Enter Your Login Info!!!
         <div>
-          <label>Username:</label>
-          <input type='text' name='name1' placeholder='Username' ng-model='user.userName1'/>
+          <input type='text' name='name1' placeholder='Email' ng-model='user.userName1'/>
         </div>
         <div>
-          <label>Password:</label>
           <input type='password' name='pass1' placeholder='Password' ng-model='user.passWord1'/>
-          <input type='submit' value='Submit'/>
         </div>
+          <input class='submit' type='submit' value='Submit'/>
       </form>
 
       <form name='personForm2' ng-submit='create()' ng-show='tab == 2'>
-        Enter An Email and Password to Signup!!!
+        Enter Your Info to Signup!!!
         <div>
-          <label>Username:</label>
-          <input type='text' name='name2' placeholder='Username' ng-model='user.userName2'/>
+          <input type='text' name='name2' placeholder='Email' ng-model='user.userName2'/>
         </div>
         <div>
-          <label>Password:</label>
           <input type='password' name='pass2' placeholder='Password' ng-model='user.passWord2'/>
-          <input type='submit' value='Submit'/>
         </div>
+          <input class='submit' type='submit' value='Submit'/>
       </form>
 
     </div>
