@@ -11,8 +11,11 @@ body {
 }
 
 .links {
-  width: 10%;
+  width: 8%;
   margin-bottom: 2em;
+  background-color: black;
+  border-radius: 1em;
+  padding: 1em;
 }
 
 @keyframes fadein {
