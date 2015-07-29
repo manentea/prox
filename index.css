@@ -138,7 +138,6 @@ h2 {
 }
 
 .unlogged {
-  margin-top: 10em;
   width: 30%;
   margin: auto;
   background-color: black;
@@ -149,4 +148,6 @@ h2 {
   word-wrap: break-word;
   color: white;
   text-align: center;
+  padding-left: 5em;
+  padding-right: 5em;
 }
