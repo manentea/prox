@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <form class='in' name='personForm1' ng-submit='login()' ng-show='tab == 1'>
+      <form class='in' name='personForm1' ng-submit="login()" ng-show='tab == 1'>
         Enter Your Login Info!!!
         <div>
           <input type='text' name='name1' placeholder='Email' ng-model='user.userName1'/>
@@ -55,10 +55,10 @@
         </div>
           <input class='submit' type='submit' value='Submit'/>
       </form>
-
     </div>
   </div>
-  <div class='unlogged welcome' ng-show='!requireLogged()'>
+  <div class="welcome" ng-controller='ShowLogged'>
+    <div class='unlogged welcome' ng-hide='requireLogged()'>
       <h2>Welcome to Prox-Chat!</h2>
       <div>
         <p>
@@ -78,5 +78,9 @@
         </p>
       </div>
     </div>
+    <div class="logged" ng-show='requireLogged()'>
+      <h1>Hello World!</h1>
+    </div>
+  </div>
 </body>
 </html>

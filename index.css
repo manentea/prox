@@ -151,3 +151,18 @@ h2 {
   padding-left: 5em;
   padding-right: 5em;
 }
+
+.logged {
+  width: 30%;
+  margin: auto;
+  background-color: black;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+  -moz-box-shadow: 0px 0px 8px 0px black;
+  box-shadow: 0px 0px 15px 0px black;
+  z-index: 20000;
+  word-wrap: break-word;
+  color: white;
+  text-align: center;
+  padding-left: 5em;
+  padding-right: 5em;
+}

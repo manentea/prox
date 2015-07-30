@@ -54,6 +54,9 @@
       });
     };
 
+  });
+
+  app.controller('ShowLogged', function($scope){
     $scope.requireLogged = function(){
       if(myBase.getAuth()){
         return true
@@ -62,6 +65,5 @@
       }
     };
   });
-
 
 })();
