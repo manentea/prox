@@ -1,7 +1,8 @@
 (function(){
   var myBase = new Firebase('https://prox-chat.firebaseio.com');
+  var myUsers = new Firebase('https://prox-chat.firebaseio.com/users');
 
-  var app = angular.module('prox', ["ngMap"]);
+  var app = angular.module('prox', ["ngMap", "firebase"]);
 
   app.controller('LoginController', function($http, $scope){
 
@@ -31,9 +32,6 @@
               userName2: "",
               passWord2: ""
     };
-    function loggedIn(authData){
-      alert("Hello " + authData.password.email)
-    };
 
     $scope.login = function(){
       myBase.authWithPassword({
@@ -48,15 +46,46 @@
           $scope.personForm1.$destroy;
           angular.element(personForm1).remove();
           console.log("Authenticated successfully with payload:", authData);
+          // debugger
+          getPosition()
         }
        }, {
         remember: "sessionOnly"
       });
     };
 
+    function fail(){
+      console.log('shit')
+    };
+
+    function addMarker(position){
+      var location = myBase.getAuth().password.email.split('@', 1)[0];
+      var user = {};
+      user[location] =
+        {
+          email: myBase.getAuth().password.email,
+          lat: position.coords.latitude + '',
+          lng: position.coords.longitude + ''
+        }
+      myUsers.set(user);
+    };
+
+    function getPosition(){
+      navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position)
+      addMarker(position)
+      },fail, { enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0 });
+    };
+
   });
 
-  app.controller('ShowLogged', function($scope){
+  app.controller('ShowLogged', function($scope, $firebaseArray){
+
+    var dbMarkers = $firebaseArray(myUsers);
+    $scope.markers = dbMarkers;
+
     $scope.requireLogged = function(){
       if(myBase.getAuth()){
         return true

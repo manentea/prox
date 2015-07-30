@@ -82,6 +82,7 @@
     </div>
     <div class="logged" ng-show='requireLogged()'>
       <map center='[40.758015, -74.036327]' zoom="15" style='height:30em;width:60em'>
+         <marker position="{{[marker.lat,marker.lng]}}" ng-repeat='marker in markers' title="{{marker.email}}"></marker>
       </map>
     </div>
   </div>
