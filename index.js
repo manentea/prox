@@ -1,7 +1,7 @@
 (function(){
   var myBase = new Firebase('https://prox-chat.firebaseio.com');
 
-  var app = angular.module('prox', []);
+  var app = angular.module('prox', ["ngMap"]);
 
   app.controller('LoginController', function($http, $scope){
 
