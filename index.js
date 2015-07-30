@@ -1,7 +1,7 @@
 (function(){
   var myBase = new Firebase('https://prox-chat.firebaseio.com');
 
-  var app = angular.module('prox', []);
+  var app = angular.module('prox', ["ngMap"]);
 
   app.controller('LoginController', function($http, $scope){
 
@@ -54,6 +54,9 @@
       });
     };
 
+  });
+
+  app.controller('ShowLogged', function($scope){
     $scope.requireLogged = function(){
       if(myBase.getAuth()){
         return true
@@ -62,6 +65,5 @@
       }
     };
   });
-
 
 })();
