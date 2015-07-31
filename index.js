@@ -1,6 +1,7 @@
 (function(){
   var myBase = new Firebase('https://prox-chat.firebaseio.com');
   var myUsers = new Firebase('https://prox-chat.firebaseio.com/users');
+  var myChat = new Firebase('https://prox-chat.firebaseio.com/chat');
 
   var app = angular.module('prox', ["ngMap", "firebase"]);
 
@@ -93,6 +94,11 @@
         return false
       }
     };
+
+    $scope.initChat = function(){
+      var chat = new FirechatUI(myChat, document.getElementById('firechat-wrapper'));
+      chat.setUser(myBase.getAuth().password.email.split('@', 1)[0], myBase.getAuth().password.email.split('@', 1)[0]);
+    }
   });
 
 })();
