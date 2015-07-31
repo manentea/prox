@@ -154,8 +154,30 @@ h2 {
 
 .logged {
   margin: auto;
+  /*padding-top: 5em;*/
+  padding-right: 11.5em;
 }
 
 map {
   margin: auto;
+}
+
+.white {
+  background-color: grey;
+  float: right;
+  margin-top: -43em;
+  margin-right: 3em;
+  width: 15em;
+}
+
+.white:active {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+#firechat-wrapper {
+  height: 20em;
+  width: 15em;
+  float: right;
+  margin-top: -27em;
 }
