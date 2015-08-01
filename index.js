@@ -114,6 +114,10 @@
       }
     };
 
+    $scope.addEvent = function(){
+
+    };
+
   });
 
 })();

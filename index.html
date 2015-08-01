@@ -20,7 +20,7 @@
 </head>
 <body>
 
-  <div class='container' ng-init='menu = 0'>
+  <div class='container' ng-init='menu = 0; event = 0'>
 
     <div class='forms' ng-controller='LoginController' ng-init='tab = 0'>
       <div class="icon" ng-click='menu = 1' ng-show='menu == 0'>
@@ -97,8 +97,20 @@
   </div>
   <div id='firechat-wrapper'></div>
   <div ng-controller='CalenderController'>
-    <div ng-show='requireLogged()' class='calender' ui-calendar ng-model="events">
 
+    <button class="addEvent" ng-click='event = 1' ng-show='event == 0'>Create an Event!</button>
+    <button class="addEvent" ng-click='event = 0' ng-show='event == 1'>Create an Event!</button>
+
+    <div ng-show='requireLogged()' class='calender' ui-calendar ng-model="events">
+    </div>
+
+    <div class="event-form" ng-show='event == 1'>
+      <form ng-submit="addEvent()">
+        Enter Event Info!!
+        <input ng-model="newEvent.title" type="text" placeholder="Title">
+        <input ui-date ui-date-format="DD, d MM, yy" ng-model="newEvent.start" placeholder='Date'>
+        <input type="submit" value="Add">
+      </form>
     </div>
   </div>
 </body>

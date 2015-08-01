@@ -167,7 +167,7 @@ map {
   float: right;
   margin-top: -43em;
   margin-right: 3em;
-  width: 15em;
+  width: 7em;
 }
 
 .white:active {
@@ -187,4 +187,30 @@ map {
   width: 15em;
   float: right;
   margin-top: -47em;
+}
+
+.fc-basic-view {
+  height: 13.1em;
+}
+
+.addEvent {
+  background-color: grey;
+  float: right;
+  margin-top: -72.1em;
+  margin-right: 12em;
+  width: 7em;
+}
+
+.event-form {
+  position: absolute;
+  margin-top: -40em;
+  left: 30em;
+  border-radius: 5px;
+  width: 50em;
+  color: white;
+  background-color: grey;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 8px 0px white;
+  -moz-box-shadow: 0px 0px 8px 0px white;
+  box-shadow: 0px 0px 15px 0px white;
 }
