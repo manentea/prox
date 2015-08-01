@@ -2,8 +2,9 @@
   var myBase = new Firebase('https://prox-chat.firebaseio.com');
   var myUsers = new Firebase('https://prox-chat.firebaseio.com/users');
   var myChat = new Firebase('https://prox-chat.firebaseio.com/chat');
+  var myEvents = new Firebase("https://prox-chat.firebaseio.com/events");
 
-  var app = angular.module('prox', ["ngMap", "firebase"]);
+  var app = angular.module('prox', ["ngMap","ui.calendar", "ui.date", "firebase"]);
 
   app.controller('LoginController', function($http, $scope){
 
@@ -99,6 +100,20 @@
       var chat = new FirechatUI(myChat, document.getElementById('firechat-wrapper'));
       chat.setUser(myBase.getAuth().password.email.split('@', 1)[0], myBase.getAuth().password.email.split('@', 1)[0]);
     }
+  });
+
+  app.controller('CalenderController', function($scope, $firebaseArray){
+    var events = $firebaseArray(myEvents);
+    $scope.events = events;
+
+    $scope.requireLogged = function(){
+      if(myBase.getAuth()){
+        return true
+      } else {
+        return false
+      }
+    };
+
   });
 
 })();
