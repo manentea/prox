@@ -181,7 +181,7 @@ map {
   margin: auto;
 }
 
-.calender {
+#calendar {
   background-color: grey;
   height: 27em;
   width: 15em;

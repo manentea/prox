@@ -123,6 +123,7 @@
       $scope.events.$add($scope.newEvent);
       $scope.newEvent = defaultEvent;
       $scope.event = 0
+      $('#calendar').fullCalendar('refetchEvents')
     };
 
   });

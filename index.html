@@ -102,10 +102,10 @@
     <button class="addEvent" ng-click='event = 1' ng-show='event == 0'>Create an Event!</button>
     <button class="addEvent" ng-click='event = 0' ng-show='event == 1'>Create an Event!</button>
 
-    <div ng-show='requireLogged()' class='calender' ui-calendar ng-model="events">
+    <div ng-show='requireLogged()' id='calendar' ui-calendar ng-model="events">
     </div>
 
-    <div class="event-form" ng-show='event == 1'>
+    <div class="event-form in" ng-show='event == 1'>
       <form ng-submit="addEvent()">
         Enter Event Info!!
         <input ng-model="newEvent.title" type="text" placeholder="Title">
