@@ -177,7 +177,14 @@ map {
 
 #firechat-wrapper {
   height: 20em;
+  width: 30%;
+  margin: auto;
+}
+
+.calender {
+  background-color: grey;
+  height: 27em;
   width: 15em;
   float: right;
-  margin-top: -27em;
+  margin-top: -47em;
 }
