@@ -106,6 +106,11 @@
     var events = $firebaseArray(myEvents);
     $scope.events = events;
 
+    var defaultEvent = {
+              title: "",
+              start: ""
+    };
+
     $scope.requireLogged = function(){
       if(myBase.getAuth()){
         return true
@@ -115,7 +120,9 @@
     };
 
     $scope.addEvent = function(){
-
+      $scope.events.$add($scope.newEvent);
+      $scope.newEvent = defaultEvent;
+      $scope.event = 0
     };
 
   });
