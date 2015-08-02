@@ -102,7 +102,7 @@
     }
   });
 
-  app.controller('CalenderController', function($scope, $firebaseArray){
+  app.controller('CalenderController', function($scope, $compile     ,$firebaseArray, uiCalendarConfig){
     var events = $firebaseArray(myEvents);
     $scope.events = events;
 
@@ -123,8 +123,29 @@
       $scope.events.$add($scope.newEvent);
       $scope.newEvent = defaultEvent;
       $scope.event = 0
-      $('#calendar').fullCalendar('refetchEvents')
+      $('#calendar').fullCalendar($scope.events)
     };
+        $scope.uiConfig = {
+      calendar:{
+        height: 450,
+        editable: true,
+        header:{
+          left: 'title',
+          center: '',
+          right: 'today prev,next'
+        },
+        eventRender: $scope.eventRender
+      }
+    };
+
+     $scope.eventRender = function( event, element, view ) {
+      debugger
+        element.attr({'tooltip': event.title,
+                     'tooltip-append-to-body': true});
+        $compile(element)($scope);
+    };
+
+    $scope.eventSources = [{events}];
 
   });
 

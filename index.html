@@ -90,7 +90,7 @@
       </div>
     </div>
     <div class="logged" ng-show='requireLogged()'>
-      <map center='[40.758015, -74.036327]' zoom="15" style='height:30em;width:60em'>
+      <map center='[40.758015, -74.036327]' zoom="15" style='height:30em;width:40em'>
          <marker position="{{[marker.lat,marker.lng]}}" ng-repeat='marker in markers' title="{{marker.email}}"></marker>
       </map>
     </div>
@@ -102,7 +102,7 @@
     <button class="addEvent" ng-click='event = 1' ng-show='event == 0'>Create an Event!</button>
     <button class="addEvent" ng-click='event = 0' ng-show='event == 1'>Create an Event!</button>
 
-    <div ng-show='requireLogged()' id='calendar' ui-calendar ng-model="events">
+    <div ng-show='requireLogged()' id='calendar' config="uiConfig.calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources">
     </div>
 
     <div class="event-form in" ng-show='event == 1'>

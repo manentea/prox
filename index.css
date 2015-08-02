@@ -160,14 +160,15 @@ h2 {
 
 map {
   margin: auto;
+  margin-left: 3.5em;
 }
 
 .white {
   background-color: grey;
   float: right;
   margin-top: -43em;
-  margin-right: 3em;
-  width: 7em;
+  margin-right: 10em;
+  width: 14em;
 }
 
 .white:active {
@@ -184,21 +185,21 @@ map {
 #calendar {
   background-color: grey;
   height: 27em;
-  width: 15em;
+  width: 35em;
   float: right;
   margin-top: -47em;
 }
 
 .fc-basic-view {
-  height: 13.1em;
+  height: 27em;
 }
 
 .addEvent {
   background-color: grey;
   float: right;
   margin-top: -72.1em;
-  margin-right: 12em;
-  width: 7em;
+  margin-right: 25em;
+  width: 14em;
 }
 
 .event-form {
