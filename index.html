@@ -13,6 +13,7 @@
   <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
   <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
   <script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap.min.js"></script>
   <script src='index.js'></script>
   <link rel='stylesheet' href='https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.css' />
   <link rel="stylesheet" type="text/css" href="index.css">
@@ -21,7 +22,7 @@
 </head>
 <body>
 
-  <div class='container' ng-init='menu = 0; event = 0'>
+  <div class='container' ng-init='menu = 0; event = 0; chat = 0'>
 
     <div class='forms' ng-controller='LoginController' ng-init='tab = 0'>
       <div class="icon" ng-click='menu = 1' ng-show='menu == 0'>
@@ -94,9 +95,10 @@
          <marker position="{{[marker.lat,marker.lng]}}" ng-repeat='marker in markers' title="{{marker.email}}"></marker>
       </map>
     </div>
-    <button class="white" ng-click='initChat()'>Start a Chat!</button>
+    <button class="white" ng-click='initChat()' ng-show='chat == 0'>Start a Chat!</button>
+    <button class="white" ng-click='chat = 0' ng-show='chat == 1'>Close Chat!</button>
   </div>
-  <div id='firechat-wrapper'></div>
+  <div ng-show='chat == 1' id='firechat-wrapper'></div>
   <div ng-controller='CalenderController'>
 
     <button class="addEvent" ng-click='event = 1' ng-show='event == 0'>Create an Event!</button>
@@ -109,7 +111,8 @@
       <form ng-submit="addEvent()">
         Enter Event Info!!
         <input ng-model="newEvent.title" type="text" placeholder="Title">
-        <input ui-date ui-date-format="DD, d MM, yy" ng-model="newEvent.start" placeholder='Date'>
+        <input ui-date ui-date-format="DD, d MM, yy" ng-model="newEvent.start" placeholder='Start Date'>
+        <input ui-date ui-date-format="DD, d MM, yy" ng-model="newEvent.end" placeholder='End Date'>
         <input type="submit" value="Add">
       </form>
     </div>
