@@ -4,7 +4,7 @@
   var myChat = new Firebase('https://prox-chat.firebaseio.com/chat');
   var myEvents = new Firebase("https://prox-chat.firebaseio.com/events");
 
-  var app = angular.module('prox', ["ngMap","ui.calendar", "ui.date", "firebase"]);
+  var app = angular.module('prox', ["ngMap","ui.calendar", "ui.date", "firebase", 'ui.bootstrap']);
 
   app.controller('LoginController', function($http, $scope){
 
@@ -108,7 +108,8 @@
 
     var defaultEvent = {
               title: "",
-              start: ""
+              start: "",
+              end: ""
     };
 
     $scope.requireLogged = function(){
@@ -139,14 +140,12 @@
     };
 
      $scope.eventRender = function( event, element, view ) {
-      debugger
+        debugger
         element.attr({'tooltip': event.title,
                      'tooltip-append-to-body': true});
         $compile(element)($scope);
     };
 
     $scope.eventSources = [{events}];
-
   });
-
 })();
