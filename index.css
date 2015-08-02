@@ -187,7 +187,7 @@ map {
   height: 27em;
   width: 35em;
   float: right;
-  margin-top: -47em;
+  margin-top: -28em;
 }
 
 .fc-basic-view {
@@ -197,15 +197,15 @@ map {
 .addEvent {
   background-color: grey;
   float: right;
-  margin-top: -72.1em;
+  margin-top: -43em;
   margin-right: 25em;
   width: 14em;
 }
 
 .event-form {
   position: absolute;
-  margin-top: -40em;
-  left: 30em;
+  margin-top: -25em;
+  left: 35em;
   border-radius: 5px;
   width: 50em;
   color: white;
