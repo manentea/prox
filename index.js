@@ -148,4 +148,7 @@
 
     $scope.eventSources = [{events}];
   });
+  $(document).ready(function(){
+    $('#ui-datepicker-div').toggle();
+  });
 })();

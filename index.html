@@ -8,12 +8,12 @@
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
   <script src="https://maps.google.com/maps/api/js"></script>
   <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
-  <script src='https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.js'></script>
   <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
   <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
   <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
   <script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap.min.js"></script>
+  <script src='https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.js'></script>
   <script src='index.js'></script>
   <link rel='stylesheet' href='https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.css' />
   <link rel="stylesheet" type="text/css" href="index.css">
@@ -98,7 +98,7 @@
     <button class="white" ng-click='initChat()' ng-show='chat == 0'>Start a Chat!</button>
     <button class="white" ng-click='chat = 0' ng-show='chat == 1'>Close Chat!</button>
   </div>
-  <div ng-show='chat == 1' id='firechat-wrapper'></div>
+  <div ng-hide='chat == 0' id='firechat-wrapper'></div>
   <div ng-controller='CalenderController'>
 
     <button class="addEvent" ng-click='event = 1' ng-show='event == 0'>Create an Event!</button>
